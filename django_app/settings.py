@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'hello',
     'sns',
     'hello2',
+    'hello3',
 ]
 
 MIDDLEWARE = [

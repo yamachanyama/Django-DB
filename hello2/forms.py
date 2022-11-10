@@ -8,6 +8,7 @@ class HelloForm(forms.Form):
 
 class MessageForm(forms.ModelForm):
   # models.pyよりMessageクラスを引用している
+  # ModelFormについては、https://itc.tokyo/django/modelform/
   class Meta:
     model = Message
     fields = ['title','content','user']

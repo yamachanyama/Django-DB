@@ -21,4 +21,5 @@ urlpatterns = [
     path('hello/', include('hello.urls')),
     path('sns/', include('sns.urls')),
     path('hello2/', include('hello2.urls')),
+    path('hello3/', include('hello3.urls')),
 ]
