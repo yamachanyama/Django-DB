@@ -3,9 +3,9 @@
 <h1>{{title}}</h1>
 <div class="bg-light p-3 p-sm-5 mb-4 border-top">
     <div class="container">
-      <h2 class="display-4">周知事項</h2>
+      <h2 class="display-4">ナレッジ一覧</h2>
       <hr class="my-4">
-      <p>今週のイベント・注意事項などはこちら！</p>
+      <p>ナレッジ一覧はこちら！</p>
       <table>
         <tr>
             <th>title</th>
@@ -23,10 +23,10 @@
         {% endfor %}
       </table>
       {% if data.has_previous %}
-        <a href="{% url 'index' %}/{{data.previous_page_number}}">&laquo;prev</a>
+        <a href="{% url 'list' %}/{{data.previous_page_number}}">&laquo;prev</a>
       {% endif %}
       {% if data.has_next %}
-        <a href="{% url 'index' %}/{{data.next_page_number }}">next&raquo;</a>
+        <a href="{% url 'list' %}/{{data.next_page_number }}">next&raquo;</a>
       {% endif %}
     </div>
 </div>

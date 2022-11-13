@@ -10,6 +10,14 @@ h1 {
     margin-bottom:0px;
     text-align:right;
 }
+h2 {
+    color:red;
+    opacity:0.2;
+    font-size:30pt;
+    margin-top:-20px;
+    margin-bottom:0px;
+    text-align:left;
+}
 p {
     margin:10px;
 }
