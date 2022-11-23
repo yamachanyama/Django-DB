@@ -11,6 +11,7 @@
 </head>
 <body>
   <header>
+    <!--https://getbootstrap.jp/docs/5.0/components/navbar/-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'index' %}">Bulletin Board Sample App</a>
@@ -21,6 +22,7 @@
             <div class="navbar-nav">
               <a class="nav-link " aria-current="index" href="{% url 'list' %}">List</a>
               <a class="nav-link" href="{% url 'create' %}">Create</a>
+              <a class="nav-link" href="mailto:&subject=件名です">mail</a>
             </div>
           </div>
         </div>
