@@ -1,0 +1,31 @@
+{% extends 'hello3/base.html' %}
+{% block Content %}
+<h1>Preview Page</h1>
+下記の内容で投稿してよろしいですか？<br>
+<br>
+==================<br>
+{% for field in form %}
+    {{ field.name }}:{{ field.value }}<br>
+{% endfor %}
+==================<br>
+<br>
+<form name="frmMain" method="POST" action="">
+    {% csrf_token %}
+    <!-- .as_hiddenを追加すると、表示されなくなる。 https://imagawa.hatenadiary.jp/entry/20120520/1337431689 -->
+    {% for field in form %}
+       {{ field.as_hidden }}
+    {% endfor %}
+    <input type="submit" value="投稿">
+</form>
+
+<!--　ポップアップさせたければ以下を実施。
+<script type="text/javascript">
+var 出力 = document.frmMain.title.value + "<p>" + document.frmMain.content.value + "<p>";
+function preview(){
+    win = window.open("", "preview", "width=500,height=500,scrollbars=yes,resizable=yes");
+    win.document.write(出力);
+    }
+</script>
+-->
+
+{% endblock Content %}

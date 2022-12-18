@@ -44,7 +44,16 @@ def edit(request, num):
         message = MessageForm(request.POST, instance=obj)
         message.save()
         return redirect(to='index')
-    params = {
+    form = MessageForm(request.GET) #プレビューに推移するときにformでサーバ側に渡しているデータ(POSTはしていない)をゲットしてMessageForm Classに渡す
+    if form.is_valid(): #POSTで渡していない時（プレビュー時）はここが実行される。（MessageForm Classの機能としてvalidされている）
+        # context に form だけ渡す
+        context = {'form': form }
+        return render(
+            request,
+            "hello3/preview.html",
+            context=context
+        )
+    params = { #1回目はここが実行される。
         'title': 'Edit',
         'id': num,
         'form': MessageForm(instance=obj),

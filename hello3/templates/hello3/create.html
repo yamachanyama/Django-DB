@@ -1,19 +1,33 @@
 {% extends 'hello3/base.html' %}
 {% block Content %}
 <h1>Create Page</h1>
-<form name="frmMain" action="javascript:preview()" method="POST"> {% csrf_token %}
+<!-- <form name="frmMain" action="javascript:preview()" method="POST"> {% csrf_token %} -->
+<form  method="POST"> {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="作成する">
 </form>
 
-<!-- プレビュー -->
-<!-- 最初はdisplay:noneなので非表示 -->
+<!--
+<button onclick="open1()">Preview1</button>
+<button onclick="open2()">Preview2</button><br>
+
+<script type="text/javascript">
+function open1() {
+    window.open("http://www.yahoo.co.jp", "yahoo", "width=500,height=500,scrollbars=yes,resizable=yes");
+}
+function open2() {
+    window.print;
+}
+</script>
+
+/* プレビュー */
+/* 最初はdisplay:noneなので非表示 */
 <div id="pop">
 <div id="pop_content"></div>
 <button onclick="preview()">閉じる</button>
 </div>
     
-<!-- スクリプト -->
+/* スクリプト */
 <script type="text/javascript">
 /* ポップアップ要素 */
 var pop = document.getElementById( "pop" );
@@ -25,7 +39,7 @@ function preview(){
     }
 </script>
 
-<!-- CSS -->
+/* CSS */
 <style type="text/css">
     html, body{
     width: 100%;
@@ -51,6 +65,6 @@ function preview(){
     border: solid 2px #000;
     text-align: center;
     }
-    </style>
+    </style> -->
 
 {% endblock Content %}

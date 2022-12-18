@@ -4,4 +4,4 @@
 py -m pip install -r requirements.txtでライブラリをインストール。
 その後に、dyango_appに移動した後にpython manage.py runserver、
 http://localhost:8000/sns/で動くはず
-（パスはadminは11111111、他は11111111!）
+（パスはadminはadmin、他は11111111!）
