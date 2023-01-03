@@ -1,0 +1,14 @@
+{% extends 'hello3/base.html' %}
+{% block Content %}
+    <section class="section">
+        <div class="container">
+            {% for post in object_list %}
+                <a href="{% url 'post_detail' post.pk %}">
+                    <div class="box">
+                        <p>{{ post.title }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock Content %}

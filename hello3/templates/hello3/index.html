@@ -15,6 +15,7 @@
         </tr>
         {% for item in data %}
         <tr>
+<!--            <td><a href="{% url 'edit' item.id %}">{{item.title}}</a></td> -->
             <td><a href="{% url 'edit' item.id %}">{{item.title}}</a></td>
             <td>{{item.person}}</td>
             <td>{{item.pub_date}}</td>

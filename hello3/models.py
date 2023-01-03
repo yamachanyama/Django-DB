@@ -22,6 +22,14 @@ class Message(models.Model):
     class Meta:
         ordering = ('pub_date',)
 
+class Comment(models.Model):
+    text = models.TextField('コメント内容')
+    post = models.ForeignKey(Message, verbose_name='対象記事', on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', verbose_name='親コメント', null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text[:10]
+
 
 # from django.core.validators import MinValueValidator
 

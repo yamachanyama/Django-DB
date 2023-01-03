@@ -1,6 +1,5 @@
 from django import forms
 from .models import Message
-
         
 class FindForm(forms.Form):
     find = forms.CharField(label='Find', required=False)
@@ -11,6 +10,3 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ['title','content', 'person']
-        
-
-# 日本語
